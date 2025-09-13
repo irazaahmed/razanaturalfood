@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Product Card Price and WhatsApp Link Updater ---
+    // --- Product Card Price and WhatsApp Link Updater (for products.html) ---
     const productCards = document.querySelectorAll('.product-card');
 
     if (productCards.length > 0) {
@@ -31,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const productName = card.dataset.product;
             
             // Update price display and WhatsApp link with initial values
-            priceDisplay.textContent = `PKR ${initialPrice.toLocaleString('en-US')}`;
-            const initialMessage = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${initialQuantity}* for PKR ${initialPrice}.`);
-            orderButton.href = `https://wa.me/923130221118?text=${initialMessage}`;
-            
+            if (priceDisplay && orderButton) {
+                priceDisplay.textContent = `PKR ${initialPrice.toLocaleString('en-US')}`;
+                const initialMessage = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${initialQuantity}* for PKR ${initialPrice}.`);
+                orderButton.href = `https://wa.me/923130221118?text=${initialMessage}`;
+            }
+
             // Add 'active' class to the first button
             quantityButtons[0].classList.add('active');
 
@@ -52,11 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const selectedPrice = button.dataset.price;
 
                     // Update the price text
-                    priceDisplay.textContent = `PKR ${selectedPrice.toLocaleString('en-US')}`;
+                    if (priceDisplay) {
+                        priceDisplay.textContent = `PKR ${selectedPrice.toLocaleString('en-US')}`;
+                    }
 
                     // Update the WhatsApp order link
-                    const message = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${selectedQuantity}* for PKR ${selectedPrice}.`);
-                    orderButton.href = `https://wa.me/923130221118?text=${message}`;
+                    if (orderButton) {
+                        const message = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${selectedQuantity}* for PKR ${selectedPrice}.`);
+                        orderButton.href = `https://wa.me/923130221118?text=${message}`;
+                    }
                 });
             });
         });
@@ -90,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Contact Form Functionality (for contact.html) ---
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault(); // Prevent the form from submitting normally
@@ -113,7 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Floating Buttons Logic (Go to Top & WhatsApp) ---
+    const goToTopBtn = document.querySelector('.go-to-top');
+    const whatsappBtn = document.querySelector('.whatsapp-button');
+
+    if (goToTopBtn && whatsappBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                goToTopBtn.style.display = 'flex';
+                whatsappBtn.classList.add('go-up');
+            } else {
+                goToTopBtn.style.display = 'none';
+                whatsappBtn.classList.remove('go-up');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
-
-
-
