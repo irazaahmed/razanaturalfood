@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raza Natural Food - Products</title>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Urdu font import from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+
+    <!-- Custom Favicon Link -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/RNF Logo PNG without name.png"
+    />
+  </head>
+
+  <body>
+    <!-- loader -->
+    <div id="loader-container">
+      <div id="loader"></div>
+    </div>
+    
+    <!-- Header Section with Navigation -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="/index.html">
+          <div class="logo">
+            <img
+              src="assets/img/RNF Logo PNG without name.png"
+              alt=""
+              width="80"
+              height="40"
+            />
+          </div>
+        </a>
+
+        <!-- Main navigation links for desktop -->
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/products.html">Products</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Hamburger menu icon for mobile -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    
+
+    <main>
+      <!-- Products Section -->
+      <section id="products" class="products-page-section">
+        <h2>Our Natural Products</h2>
+        <div class="product-grid">
+          <!-- Product Card 1: Pure Beri Honey -->
+          <div class="product-card" data-product="Pure Beri Honey">
+            <img src="assets/img/products/export honey.png" alt="Pure Beri Honey" />
+            <h3>Export Quality Beri Honey</h3>
+            <p>
+              This honey is a testament to nature's purity, harvested from the
+              pristine Beri orchards. It's thick, rich, and carries the unique,
+              aromatic flavor of Beri blossoms.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="4200">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="2300">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="1200">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 4,200</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 2: Choti Makhi Beri Honey -->
+          <div class="product-card" data-product="Choti Makhi Beri Honey">
+            <img src="assets/img/products/Pure Honey.png" alt="Choti Makhi Beri Honey" />
+            <h3>Choti Makhi Beri Honey</h3>
+            <p>
+              Sourced from Choti Makhi (small bees), this honey is renowned for
+              its premium quality and medicinal properties. It is unprocessed and
+              retains all of its natural goodness, just as it comes from the
+              beehive.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="3700">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="1900">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="1000">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 3,700</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 3: Bari Makhi Beri Honey -->
+          <div class="product-card" data-product="Bari Makhi Beri Honey">
+            <img src="assets/img/products/Bari makhi.png" alt="Bari Makhi Beri Honey" />
+            <h3>Bari Makhi Beri Honey</h3>
+            <p>
+              Harvested by Bari Makhi (large bees), this honey has a distinct,
+              rich flavor profile. It is pure, natural, and full of the wholesome
+              goodness that only untouched honey can offer.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="3000">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="1500">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="800">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 3,000</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 4: Palosa Honey -->
+          <div class="product-card" data-product="Palosa Honey">
+            <img src="assets/img/products/palosa honey.png" alt="Palosa Honey" />
+            <h3>Palosa Honey</h3>
+            <p>
+              A pure and natural honey sourced from the defferent folwers. Its unique
+              flavor and light color make it a perfect, healthy sweetener for
+              your daily routine.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="2200">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="1100">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="600">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 2,200</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 5: Gaye Ka Khalis Desi Ghee -->
+          <div class="product-card" data-product="Pure Desi Ghee">
+            <img src="assets/img/products/Desi Ghee.png" alt="Pure Desi Ghee" />
+            <h3>Pure Desi Ghee</h3>
+            <p>
+              The golden essence of village purity. Our Desi Ghee is prepared
+              using the traditional method of simmering pure butter over a low
+              flame to capture its rich aroma and nutty flavor.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="2800">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="1500">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="750">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 2,800</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 6: Gaye Ka Khalis Makhan -->
+          <div class="product-card" data-product="Fresh Desi Makhan">
+            <img src="assets/img/products/makhan.png" alt="Fresh Desi Makhan" />
+            <h3>Fresh Desi Makhan</h3>
+            <p>
+              Experience the creamy, melt-in-your-mouth goodness of authentic
+              Desi Makhan. Churned from the finest cream, it's a staple of
+              traditional village breakfasts.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="2600">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="1400">
+                ½ kg
+              </button>
+              <button class="quantity-btn" data-quantity="¼ kg" data-price="700">
+                ¼ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 2,600</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 7: Desi Ghee ki Panjeeri -->
+          <div class="product-card" data-product="Desi Ghee ki Panjeeri">
+            <img src="assets/img/products/panjeeri.png" alt="Desi Ghee ki Panjeeri" />
+            <h3>Desi Ghee ki Panjeeri</h3>
+            <p>
+              A traditional, energy-boosting delight. Made with pure Desi Ghee,
+              wholesome nuts, and organic ingredients, it is a perfect snack for
+              a quick energy lift.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 kg" data-price="3500">
+                1 kg
+              </button>
+              <button class="quantity-btn" data-quantity="½ kg" data-price="2000">
+                ½ kg
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 3,500</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 8: Sarson Oil -->
+          <div class="product-card" data-product="Sarson Oil">
+            <img src="assets/img/products/mustard oil.png" alt="Pure Sarson Oil" />
+            <h3>Pure Sarson Oil</h3>
+            <p>
+              This pure mustard oil is cold-pressed to retain its natural aroma,
+              flavor, and all its essential nutrients. It’s a healthy choice for
+              cooking and adds a unique taste to your dishes.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="1 Liter" data-price="700">
+                1 Liter
+              </button>
+              <button class="quantity-btn" data-quantity="½ Liter" data-price="350">
+                ½ Liter
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 700</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+
+          <!-- Product Card 9: Salajeet -->
+          <div class="product-card" data-product="Salajeet">
+            <img src="assets/img/products/salajeet.png" />
+            <h3>Pure Salajeet</h3>
+            <p>
+              Sourced from the high mountains, this pure and authentic Salajeet
+              is a powerful natural supplement known for its revitalizing
+              properties. It is meticulously processed to ensure the highest
+              purity.
+            </p>
+            <div class="quantity-selector">
+              <button class="quantity-btn active" data-quantity="10 grams" data-price="1000">
+                10 grams
+              </button>
+            </div>
+            <div class="price-display">
+              Price: <span>PKR 1,000</span>
+            </div>
+            <a href="#" class="product-button">Order via WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="social-links">
+        <a href="https://wa.me/923130221118" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="https://www.facebook.com/irazaahmed" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://instagram.com/irazaahmed" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://x.com/iraza_ahmed" target="_blank"
+          ><i class="fab fa-x"></i
+        ></a>
+      </div>
+      <p>&copy; 2025 Raza Natural Food. All rights reserved.</p>
+    </footer>
+
+
+
+     <a
+      href="https://wa.me/923130221118"
+      target="_blank"
+      class="whatsapp-button"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#" class="go-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
