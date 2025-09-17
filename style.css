@@ -702,7 +702,7 @@ section {
 /* --- Order Button --- */
 .product-button {
     text-decoration: none;
-    background-color: #5C4033; /* WhatsApp Green */
+    background-color: #5C4033;
     color: white;
     padding: 0.75rem 1rem;
     text-align: center;
@@ -724,7 +724,38 @@ section {
 }
 
 
+/* New styles for quantity control */
+.product-quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
 
+.quantity-control {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quantity-control:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.quantity-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
 
 
 /* --- Contact Page Hero Section --- */
@@ -885,4 +916,86 @@ section {
 .social-links-contact a:hover {
   color: var(--color-secondary);
   transform: translateY(-3px);
+}
+
+
+
+/* --- Blog Page Styles --- */
+.blog-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.blog-card {
+    background-color: white;
+    border: 1px solid var(--color-light-accent);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-title {
+    font-family: 'Jameel Noori Nastaleeq', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    direction: rtl;
+}
+
+.blog-excerpt {
+    font-family: 'Jameel Noori Nastaleeq', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    direction: rtl;
+}
+
+.blog-button {
+    text-decoration: none;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.75rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: fit-content;
+    margin-top: auto;
+}
+
+.blog-button:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

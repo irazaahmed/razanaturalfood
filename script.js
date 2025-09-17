@@ -24,46 +24,65 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantityButtons = card.querySelectorAll('.quantity-btn');
             const priceDisplay = card.querySelector('.price-display span');
             const orderButton = card.querySelector('.product-button');
-            
-            // Set initial state for each card
-            const initialQuantity = quantityButtons[0].dataset.quantity;
-            const initialPrice = quantityButtons[0].dataset.price;
-            const productName = card.dataset.product;
-            
-            // Update price display and WhatsApp link with initial values
-            if (priceDisplay && orderButton) {
-                priceDisplay.textContent = `PKR ${initialPrice.toLocaleString('en-US')}`;
-                const initialMessage = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${initialQuantity}* for PKR ${initialPrice}.`);
-                orderButton.href = `https://wa.me/923130221118?text=${initialMessage}`;
-            }
+            const minusButton = card.querySelector('.quantity-control.minus');
+            const plusButton = card.querySelector('.quantity-control.plus');
+            const quantityValueSpan = card.querySelector('.quantity-value');
 
-            // Add 'active' class to the first button
-            quantityButtons[0].classList.add('active');
+            let basePrice = parseInt(quantityButtons[0].dataset.price);
+            let selectedQuantity = quantityButtons[0].dataset.quantity;
+            let currentQuantity = 1;
 
-            // Add click event listener to each quantity button
+            // Function to update price and WhatsApp link
+            const updateProductInfo = () => {
+                const totalPrice = basePrice * currentQuantity;
+                if (priceDisplay) {
+                    priceDisplay.textContent = `PKR ${totalPrice.toLocaleString('en-US')}`;
+                }
+                if (orderButton) {
+                    const message = encodeURIComponent(`Hello, I would like to order *${currentQuantity}x ${selectedQuantity}* of *${card.dataset.product}*. Total Price: PKR ${totalPrice}.`);
+                    orderButton.href = `https://wa.me/923130221118?text=${message}`;
+                }
+            };
+            
+            // Set initial quantity and price
+            quantityValueSpan.textContent = currentQuantity;
+            updateProductInfo();
+
+            // Add click event listener to each size button
             quantityButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     // Remove 'active' class from all buttons in the same card
                     quantityButtons.forEach(btn => btn.classList.remove('active'));
-
                     // Add 'active' class to the clicked button
                     button.classList.add('active');
 
-                    // Get selected quantity and price from the data attributes
-                    const selectedQuantity = button.dataset.quantity;
-                    const selectedPrice = button.dataset.price;
+                    // Get selected size and price from the data attributes
+                    selectedQuantity = button.dataset.quantity;
+                    basePrice = parseInt(button.dataset.price);
+                    
+                    // Reset quantity to 1 for the new size
+                    currentQuantity = 1;
+                    quantityValueSpan.textContent = currentQuantity;
 
-                    // Update the price text
-                    if (priceDisplay) {
-                        priceDisplay.textContent = `PKR ${selectedPrice.toLocaleString('en-US')}`;
-                    }
-
-                    // Update the WhatsApp order link
-                    if (orderButton) {
-                        const message = encodeURIComponent(`Hello, I would like to order *${productName}* - Quantity: *${selectedQuantity}* for PKR ${selectedPrice}.`);
-                        orderButton.href = `https://wa.me/923130221118?text=${message}`;
-                    }
+                    // Update price display and WhatsApp link
+                    updateProductInfo();
                 });
+            });
+
+            // Add click event listener for minus button
+            minusButton.addEventListener('click', () => {
+                if (currentQuantity > 1) {
+                    currentQuantity--;
+                    quantityValueSpan.textContent = currentQuantity;
+                    updateProductInfo();
+                }
+            });
+
+            // Add click event listener for plus button
+            plusButton.addEventListener('click', () => {
+                currentQuantity++;
+                quantityValueSpan.textContent = currentQuantity;
+                updateProductInfo();
             });
         });
     }
@@ -142,3 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
